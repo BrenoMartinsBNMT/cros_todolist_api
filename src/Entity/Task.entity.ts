@@ -2,7 +2,7 @@ import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from 'typeorm';
 import { UserEntity } from './User.entity';
 
 @Entity({ name: 'todo_tasks' })
-export class TodoEntity {
+export class TaskEntity {
   @PrimaryGeneratedColumn('increment')
   id: string;
 

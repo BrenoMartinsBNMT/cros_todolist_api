@@ -1,5 +1,5 @@
 import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from 'typeorm';
-import { TodoEntity } from './Todo.entity';
+import { TaskEntity } from './Task.entity';
 
 @Entity({ name: 'todo_user' })
 export class UserEntity {
@@ -11,6 +11,6 @@ export class UserEntity {
   @Column({ type: 'varchar', length: 255 })
   todo: string;
   @Column({ type: 'varchar' })
-  @OneToMany(() => TodoEntity, (todo) => todo.id)
+  @OneToMany(() => TaskEntity, (task) => task.id)
   tasks: string;
 }

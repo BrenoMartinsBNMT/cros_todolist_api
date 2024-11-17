@@ -1,7 +1,7 @@
 import { TypeOrmModuleOptions } from '@nestjs/typeorm';
 import { configDotenv } from 'dotenv';
 import * as path from 'path';
-import { TodoEntity } from 'src/Entity/Todo.entity';
+import { TaskEntity } from 'src/Entity/Task.entity';
 import { UserEntity } from 'src/Entity/User.entity';
 
 export class PostgresService {
@@ -15,7 +15,7 @@ export class PostgresService {
       password: env.POSTGRES_PASSWORD,
       database: env.POSTGRES_DB,
 
-      entities: [UserEntity, TodoEntity],
+      entities: [UserEntity, TaskEntity],
       migrations: [path.join(__dirname, 'src/migrations/*{.ts,.js}')],
 
       ssl: env.POSTGRES_SSL === 'true',
