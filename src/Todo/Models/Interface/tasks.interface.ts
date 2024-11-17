@@ -1,4 +1,4 @@
-export interface todoInterface {
+export interface tasksInterface {
   user: string;
   task: string;
   subTask: string;

@@ -1,8 +1,8 @@
 import { TypeOrmModuleOptions } from '@nestjs/typeorm';
 import { configDotenv } from 'dotenv';
 import * as path from 'path';
-import { TodoEntity } from 'src/Todo/Entity/Todo.entity';
-import { UserEntity } from 'src/Todo/Entity/User.entity';
+import { TodoEntity } from 'src/Entity/Todo.entity';
+import { UserEntity } from 'src/Entity/User.entity';
 
 export class PostgresService {
   public getTypeOrmConfig(): TypeOrmModuleOptions {
