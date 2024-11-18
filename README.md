@@ -32,8 +32,15 @@ Este projeto é uma API para gerenciar uma lista de tarefas (ToDo List). A API p
 
 1. Crie um arquivo `.env` na raiz do projeto e adicione as seguintes variáveis:
   ```env
-  PORT=3000
-  MONGODB_URI=mongodb://localhost:27017/todolist
+  MYSQL_HOST=127.0.0.1
+MYSQL_PORT=3306
+MYSQL_USER=todolist
+MYSQL_PASSWORD=todolist
+MYSQL_DB=todolist_database
+
+JWT_SECRET=your_secret_key
+SALT_ROUNDS=10
+
   ```
 
 ## Executando o Projeto
@@ -42,7 +49,11 @@ Este projeto é uma API para gerenciar uma lista de tarefas (ToDo List). A API p
   ```bash
   npm start
   ```
-2. A API estará disponível em `http://localhost:3000`.
+2. Inicie o servidor MySql:
+  ```bash
+  docker-compose up -d
+  ```
+3. A API estará disponível em `http://localhost:3000`.
 
 ## Endpoints
 
@@ -51,15 +62,3 @@ Este projeto é uma API para gerenciar uma lista de tarefas (ToDo List). A API p
 - `GET /tasks/:id` - Retorna uma tarefa específica
 - `PUT /tasks/:id` - Atualiza uma tarefa específica
 - `DELETE /tasks/:id` - Deleta uma tarefa específica
-
-## Contribuição
-
-1. Faça um fork do projeto
-2. Crie uma nova branch: `git checkout -b minha-nova-feature`
-3. Faça suas alterações e commit: `git commit -m 'Adiciona nova feature'`
-4. Envie para o repositório remoto: `git push origin minha-nova-feature`
-5. Abra um Pull Request
-
-## Licença
-
-Este projeto está licenciado sob a Licença MIT.
