@@ -1,14 +1,15 @@
 services:
   postgres:
-    image: postgres:latest
+    image: mysql:latest
     restart: always
     environment:
-      - POSTGRES_USER=todolist
-      - POSTGRES_PASSWORD=todolist
-      - POSTGRES_DB=todolist_database
+      - MYSQL_ROOT_PASSWORD=rootpassword
+      - MYSQL_DATABASE=todolist_database
+      - MYSQL_USER=todolist
+      - MYSQL_PASSWORD=todolist
     ports:
-      - '5432:5432'
+      - '3306:3306'
     volumes:
-      - db:/var/lib/postgresql/data
+      - db:/var/lib/mysql
 volumes:
   db:
