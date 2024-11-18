@@ -1,0 +1,221 @@
+{
+	"info": {
+		"_postman_id": "19703977-d0ba-4a04-a069-0b08bbd8b0fc",
+		"name": "cros-collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "15580219"
+	},
+	"item": [
+		{
+			"name": "criar-conta",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nome\":\"teste\",\r\n    \"email\":\"teste2@teste.com\",\r\n    \"senha\":\"teste123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/usuario/criar",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"usuario",
+						"criar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login-conta",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"teste2@teste.com\",\r\n    \"senha\":\"teste123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/usuario/login",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"usuario",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "criar-tarefa",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RlQHRlc3RlLmNvbSIsImlhdCI6MTczMTkwODIyMSwiZXhwIjoxNzMxOTk0NjIxfQ.EnKJIyuJ3iAGXJXf-dXniHMYe7MpzFIbCYgGdanX1DE",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"titulo\": \"teste\",\r\n    \"descricao\": \"teste2\",\r\n    \"feito\": true,\r\n    \"usuarioId\": 1\r\n    \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/tarefas/criar",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"tarefas",
+						"criar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "editar-tarefa",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RlQHRlc3RlLmNvbSIsImlhdCI6MTczMTkwODIyMSwiZXhwIjoxNzMxOTk0NjIxfQ.EnKJIyuJ3iAGXJXf-dXniHMYe7MpzFIbCYgGdanX1DE",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 6,\r\n    \"usuarioId\": 1,\r\n    \"feito\": true,\r\n    \"descricao\":\"testando\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/tarefas/editar",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"tarefas",
+						"editar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "buscar-tarefa",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RlQHRlc3RlLmNvbSIsImlhdCI6MTczMTkwODIyMSwiZXhwIjoxNzMxOTk0NjIxfQ.EnKJIyuJ3iAGXJXf-dXniHMYe7MpzFIbCYgGdanX1DE",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"idUsuario\":1\r\n    \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/tarefas/buscar",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"tarefas",
+						"buscar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "tarefas-excluir",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RlQHRlc3RlLmNvbSIsImlhdCI6MTczMTkwODIyMSwiZXhwIjoxNzMxOTk0NjIxfQ.EnKJIyuJ3iAGXJXf-dXniHMYe7MpzFIbCYgGdanX1DE",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"usuarioId\":1,\r\n    \"id\":1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/tarefas/excluir",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"tarefas",
+						"excluir"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

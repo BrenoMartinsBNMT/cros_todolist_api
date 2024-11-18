@@ -31,10 +31,11 @@ export class TarefaController {
 
   /**
    * Busca tarefas do usuário.
-   * @param usuario - Dados do usuário para buscar tarefas.
+   * @param idUsuario - Dados do usuário para buscar tarefas.
    * @param feito - Dados do usuário para buscar tarefas que estão ou não feitas.
    * @returns Lista de tarefas do usuário.
-   */ @Get('buscar')
+   */
+  @Get('buscar')
   @ApiOperation({ summary: 'Busca tarefas do usuário' })
   @ApiResponse({
     status: 200,
