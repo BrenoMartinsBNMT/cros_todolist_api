@@ -4,9 +4,10 @@ import { TarefaEntity } from 'src/entity/tarefa.entity';
 import { InjectRepository } from '@nestjs/typeorm';
 
 import { usuarioTarefasDTO } from 'src/usuario/DTO/usuario-tarefas.dto';
-import { TarefaDTO } from './DTO/tarefa.dto';
+
 import { CriarTarefaDTO } from './DTO/criar.dto';
 import { EditarTarefaDTO } from './DTO/editar.dto';
+import { ExcluirTarefaDTO } from './DTO/excluir.dto';
 
 @Injectable()
 export class TarefaService {
@@ -70,7 +71,7 @@ export class TarefaService {
     return this.tarefasRepository.findOne({ where: { id: tarefa.id } });
   }
 
-  async excluirTarefa(tarefa: TarefaDTO) {
+  async excluirTarefa(tarefa: ExcluirTarefaDTO) {
     const tarefaExistente = await this.tarefasRepositoryTree.findOne({
       where: { id: tarefa.id, usuario: { id: tarefa.usuarioId } },
     });
