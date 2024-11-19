@@ -55,10 +55,7 @@ SALT_ROUNDS=10
   ```
 3. A API estará disponível em `http://localhost:3000`.
 
-## Endpoints
+## Swagger
 
-- `GET /tasks` - Retorna todas as tarefas
-- `POST /tasks` - Cria uma nova tarefa
-- `GET /tasks/:id` - Retorna uma tarefa específica
-- `PUT /tasks/:id` - Atualiza uma tarefa específica
-- `DELETE /tasks/:id` - Deleta uma tarefa específica
+- `localhost:3000/api` - swagger
+
