@@ -1,6 +1,5 @@
 import { TypeOrmModuleOptions } from '@nestjs/typeorm';
 import { configDotenv } from 'dotenv';
-import * as path from 'path';
 import { TarefaEntity } from 'src/entity/tarefa.entity';
 
 import { UsuarioEntity } from 'src/entity/usuario.entity';
@@ -17,10 +16,10 @@ export class MysqlService {
       database: env.MYSQL_DB,
 
       entities: [UsuarioEntity, TarefaEntity],
-      migrations: [path.join(__dirname, 'src/migrations/*{.ts,.js}')],
+      migrations: ['src/migrations'],
 
       ssl: env.MYSQL_SSL === 'true',
-      synchronize: true,
+      synchronize: false,
     };
   }
 }
